@@ -1,24 +1,19 @@
-# Simple name for your custom OS
 name: my-bazzite-os
-description: Hyprland gaming build for Alienware R12 RTX 3060
+description: Hyprland build for Alienware RTX 3060
 
-# Base image targets your specific Nvidia card
 base-image: ghcr.io/ublue-os/bazzite-nvidia
 image-version: stable
 
 modules:
   - type: rpm-ostree
     install:
-      # Core Desktop Environment
       - hyprland
       - kitty
       - waybar
       - rofi-wayland
       - thunar
       - fish
-      # Video decoding for your Nvidia card
       - nvidia-vaapi-driver
-      - libva-utils
 
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
